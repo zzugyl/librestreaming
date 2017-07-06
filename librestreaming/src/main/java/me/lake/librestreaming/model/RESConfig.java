@@ -37,6 +37,7 @@ public class RESConfig {
     private int backCameraDirectionMode;
     private int videoFPS;
     private int videoGOP;
+    private int audioChannels;
     private boolean printDetailMsg;
 
     private RESConfig() {
@@ -49,6 +50,7 @@ public class RESConfig {
         res.setTargetVideoSize(new Size(1280, 720));
         res.setVideoFPS(15);
         res.setVideoGOP(1);
+        res.setAudioChannels(2);
         res.setVideoBufferQueueNum(5);
         res.setBitRate(2000000);
         res.setPrintDetailMsg(false);
@@ -146,6 +148,14 @@ public class RESConfig {
 
     public void setVideoGOP(int videoGOP){
         this.videoGOP = videoGOP;
+    }
+
+    public int getAudioChannels(){
+        return audioChannels;
+    }
+
+    public void setAudioChannels(int audioChannels){
+        this.audioChannels = audioChannels;
     }
 
     public int getVideoBufferQueueNum() {

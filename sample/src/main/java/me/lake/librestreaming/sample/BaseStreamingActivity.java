@@ -87,6 +87,7 @@ public class BaseStreamingActivity extends AppCompatActivity implements RESConne
         resConfig.setBitRate(750 * 1024);
         resConfig.setVideoFPS(20);
         resConfig.setVideoGOP(1);
+        resConfig.setAudioChannels(2);
         resConfig.setRenderingMode(RESConfig.RenderingMode.OpenGLES);
         resConfig.setDefaultCamera(Camera.CameraInfo.CAMERA_FACING_FRONT);
         int frontDirection, backDirection;

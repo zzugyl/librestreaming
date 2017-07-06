@@ -39,6 +39,7 @@ This project uses Android lastest [MediaCodec API](https://developer.android.com
         resConfig.setBitRate(1000 * 1024);
         resConfig.setVideoFPS(30);
         resConfig.setVideoGOP(1);
+        resConfig.setAudioChannels(2);
         resConfig.setRenderingMode(RESConfig.RenderingMode.OpenGLES);//setrender mode in softmode
         resConfig.setDefaultCamera(Camera.CameraInfo.CAMERA_FACING_FRONT);
         if (!resClient.prepare(resConfig)) {

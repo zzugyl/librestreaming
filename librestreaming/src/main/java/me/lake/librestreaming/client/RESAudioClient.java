@@ -35,7 +35,7 @@ public class RESAudioClient {
                 return false;
             }
             resCoreParameters.audioRecoderFormat = AudioFormat.ENCODING_PCM_16BIT;
-            resCoreParameters.audioRecoderChannelConfig = AudioFormat.CHANNEL_IN_MONO;
+            resCoreParameters.audioRecoderChannelConfig = (2==resConfig.getAudioChannels())?AudioFormat.CHANNEL_IN_STEREO:AudioFormat.CHANNEL_IN_MONO;
             resCoreParameters.audioRecoderSliceSize = resCoreParameters.mediacodecAACSampleRate / 10;
             resCoreParameters.audioRecoderBufferSize = resCoreParameters.audioRecoderSliceSize * 2;
             resCoreParameters.audioRecoderSource = MediaRecorder.AudioSource.DEFAULT;
