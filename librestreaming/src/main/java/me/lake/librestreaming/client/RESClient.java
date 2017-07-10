@@ -95,9 +95,9 @@ public class RESClient {
      */
     public void stopStreaming() {
         synchronized (SyncOp) {
-            videoClient.stopStreaming();
-            audioClient.stop();
-            rtmpSender.stop();
+            if(null!=videoClient) videoClient.stopStreaming();
+            if(null!=audioClient) audioClient.stop();
+            if(null!=rtmpSender) rtmpSender.stop();
             LogTools.d("RESClient,stopStreaming()");
         }
     }
@@ -128,7 +128,7 @@ public class RESClient {
     }
 
     public void updatePreview(int visualWidth, int visualHeight) {
-        videoClient.updatePreview(visualWidth, visualHeight);
+        if(null!=videoClient) videoClient.updatePreview(visualWidth, visualHeight);
         LogTools.d("RESClient,updatePreview()");
     }
 
@@ -137,7 +137,7 @@ public class RESClient {
      * @param releaseTexture true if you won`t reuse this surfaceTexture later
      */
     public void stopPreview(boolean releaseTexture) {
-        videoClient.stopPreview(releaseTexture);
+        if(null!=videoClient) videoClient.stopPreview(releaseTexture);
         LogTools.d("RESClient,stopPreview()");
     }
 
