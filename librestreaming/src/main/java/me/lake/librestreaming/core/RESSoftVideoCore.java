@@ -415,7 +415,7 @@ public class RESSoftVideoCore implements RESVideoCore {
                         }
                     }
                     sequenceNum++;
-                    long nowTimeMs = SystemClock.uptimeMillis();
+                    long nowTimeMs = System.currentTimeMillis();
                     boolean isFilterLocked = lockVideoFilter();
                     if (isFilterLocked) {
                         boolean modified;
@@ -465,7 +465,7 @@ public class RESSoftVideoCore implements RESVideoCore {
                         }
                     }
 
-                    LogTools.d("VideoFilterHandler,ProcessTime:" + (System.currentTimeMillis() - nowTimeMs));
+                    LogTools.d("VideoFilterHandler,ProcessTime:" + (System.currentTimeMillis() - nowTimeMs) + "ms");
                 }
                 break;
                 case WHAT_RESET_BITRATE: {
