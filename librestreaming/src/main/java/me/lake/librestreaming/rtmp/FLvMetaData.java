@@ -47,6 +47,12 @@ public class FLvMetaData {
             case 44100:
                 setProperty("audiosamplerate", 44100);
                 break;
+            case 32000:
+                setProperty("audiosamplerate", 32000);
+                break;
+            case 16000:
+                setProperty("audiosamplerate", 16000);
+                break;
             default:
                 break;
         }
