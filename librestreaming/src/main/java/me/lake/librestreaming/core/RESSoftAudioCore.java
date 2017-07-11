@@ -202,7 +202,7 @@ public class RESSoftAudioCore {
             } else {
                 LogTools.d("dstAudioEncoder.dequeueInputBuffer(-1)<0");
             }
-            LogTools.d("AudioFilterHandler,ProcessTime:" + (System.currentTimeMillis() - nowTimeMs));
+            LogTools.d("AudioFilterHandler,ProcessTime:" + (SystemClock.uptimeMillis() - nowTimeMs) + "ms");
         }
 
         /**
