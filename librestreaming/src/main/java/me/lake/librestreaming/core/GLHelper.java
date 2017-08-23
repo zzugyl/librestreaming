@@ -102,10 +102,10 @@ public class GLHelper {
             0.0f, 0.0f,
             1.0f, 0.0f};
     private static float MediaCodecTextureVertices[] = {
-            0.0f, 1.0f,
-            0.0f, 0.0f,
+            1.0f, 1.0f,
             1.0f, 0.0f,
-            1.0f, 1.0f};
+            0.0f, 0.0f,
+            0.0f, 1.0f};
     private static float ScreenTextureVertices[] = {
             0.0f, 1.0f,
             0.0f, 0.0f,
