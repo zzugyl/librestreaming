@@ -37,6 +37,7 @@ public class RESConfig {
     private int backCameraDirectionMode;
     private int videoFPS;
     private int videoGOP;
+    private int audioSample;
     private int audioChannels;
     private boolean printDetailMsg;
 
@@ -48,11 +49,12 @@ public class RESConfig {
         res.setFilterMode(FilterMode.SOFT);
         res.setRenderingMode(RenderingMode.NativeWindow);
         res.setTargetVideoSize(new Size(1280, 720));
-        res.setVideoFPS(15);
+        res.setVideoFPS(30);
         res.setVideoGOP(1);
-        res.setAudioChannels(2);
+        res.setAudioSample(16000);
+        res.setAudioChannels(1);
         res.setVideoBufferQueueNum(5);
-        res.setBitRate(2000000);
+        res.setBitRate(1200000);
         res.setPrintDetailMsg(false);
         res.setDefaultCamera(Camera.CameraInfo.CAMERA_FACING_BACK);
         res.setBackCameraDirectionMode(DirectionMode.FLAG_DIRECTION_ROATATION_0);
@@ -148,6 +150,14 @@ public class RESConfig {
 
     public void setVideoGOP(int videoGOP){
         this.videoGOP = videoGOP;
+    }
+
+    public int getAudioSample(){
+        return audioSample;
+    }
+
+    public void setAudioSample(int audioSample){
+        this.audioSample = audioSample;
     }
 
     public int getAudioChannels(){

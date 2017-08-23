@@ -65,10 +65,10 @@ public class RESSoftAudioCore {
     public boolean prepare(RESConfig resConfig) {
         synchronized (syncOp) {
             resCoreParameters.mediacodecAACProfile = MediaCodecInfo.CodecProfileLevel.AACObjectLC;
-            resCoreParameters.mediacodecAACSampleRate = 44100;
+            resCoreParameters.mediacodecAACSampleRate = resConfig.getAudioSample();
             resCoreParameters.mediacodecAACChannelCount = resConfig.getAudioChannels();
             resCoreParameters.mediacodecAACBitRate = 64 * 1024;
-            resCoreParameters.mediacodecAACMaxInputSize = 8820;
+            resCoreParameters.mediacodecAACMaxInputSize = resConfig.getAudioSample()*resConfig.getAudioChannels()/5;
 
             dstAudioFormat = new MediaFormat();
             dstAudioEncoder = MediaCodecHelper.createAudioMediaCodec(resCoreParameters, dstAudioFormat);
