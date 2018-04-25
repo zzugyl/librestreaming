@@ -133,7 +133,7 @@ public class BaseStreamingActivity extends AppCompatActivity implements RESConne
         };
         mainHander.sendEmptyMessage(0);
 
-        resClient.setSoftAudioFilter(new SetVolumeAudioFilter());
+        // resClient.setSoftAudioFilter(new SetVolumeAudioFilter());
         sb_zoom.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -153,14 +153,14 @@ public class BaseStreamingActivity extends AppCompatActivity implements RESConne
         sb_volume.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                BaseSoftAudioFilter audioFilter = resClient.acquireSoftAudioFilter();
-                if (audioFilter != null) {
-                    if (audioFilter instanceof SetVolumeAudioFilter) {
-                        SetVolumeAudioFilter blackWhiteFilter = (SetVolumeAudioFilter) audioFilter;
-                        blackWhiteFilter.setVolumeScale((float) (progress / 10.0));
-                    }
-                }
-                resClient.releaseSoftAudioFilter();
+                // BaseSoftAudioFilter audioFilter = resClient.acquireSoftAudioFilter();
+                // if (audioFilter != null) {
+                //     if (audioFilter instanceof SetVolumeAudioFilter) {
+                //         SetVolumeAudioFilter blackWhiteFilter = (SetVolumeAudioFilter) audioFilter;
+                //         blackWhiteFilter.setVolumeScale((float) (progress / 10.0));
+                //     }
+                // }
+                // resClient.releaseSoftAudioFilter();
             }
 
             @Override
